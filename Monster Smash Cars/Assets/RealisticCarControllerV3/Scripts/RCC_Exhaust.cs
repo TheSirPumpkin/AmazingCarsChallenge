@@ -110,7 +110,7 @@ public class RCC_Exhaust : MonoBehaviour {
 				
 				if(carController._boostInput >= 1.5f && flame){
 					flame.startColor = boostFlameColor;
-					flameLight.color = flame.startColor;
+					//flameLight.color = flame.startColor;
 				}else{
 					flame.startColor = flameColor;
 					//flameLight.color = flame.startColor;
