@@ -63,7 +63,7 @@ public class RCC_Exhaust : MonoBehaviour {
 			subEmission = flame.emission;
 			flameLight = flame.GetComponentInChildren<Light>();
 			flameSource = RCC_CreateAudioSource.NewAudioSource(gameObject, "Exhaust Flame AudioSource", 10f, 25f, 1f, RCCSettings.exhaustFlameClips[0], false, false, false);
-			flameLight.renderMode = RCCSettings.useLightsAsVertexLights ? LightRenderMode.ForceVertex : LightRenderMode.ForcePixel;
+			//flameLight.renderMode = RCCSettings.useLightsAsVertexLights ? LightRenderMode.ForceVertex : LightRenderMode.ForcePixel;
 
 		}
 	
@@ -113,7 +113,7 @@ public class RCC_Exhaust : MonoBehaviour {
 					flameLight.color = flame.startColor;
 				}else{
 					flame.startColor = flameColor;
-					flameLight.color = flame.startColor;
+					//flameLight.color = flame.startColor;
 				}
 
 				if(!flameSource.isPlaying){
