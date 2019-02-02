@@ -4,12 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+    public static GameController instance;
+    public GameObject[] player1Cars, player2Cars;
     public Text score1,score11, score2,score22;
     public  GameObject[] players;
     public RCC_CameraConfig p1, p2;
     int player1Points, player2Points;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Use this for initialization
     void Start () {
+        
+        player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
+        player2Cars[PlayerPrefs.GetInt("Player2Car")].SetActive(true);
         players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject player in players)

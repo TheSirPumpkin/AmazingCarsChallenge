@@ -30,8 +30,8 @@ public class RCC_Camera : MonoBehaviour{
 		}
 	}
 
-	#endregion
-	
+    #endregion
+    public int player;
 	// The target we are following transform and rigidbody.
 	public Transform playerCar;
 	public Transform _playerCar{get{return playerCar;}set{playerCar = value;	GetPlayerCar();}}
@@ -129,8 +129,19 @@ public class RCC_Camera : MonoBehaviour{
 		orgTimeScale = Time.timeScale;
 
 	}
-	
-	void GetPlayerCar(){
+    void ChoosePlayer()
+    {
+        if (this.GetComponent<PlayerChoose>().player == 1)
+            playerCar = GameController.instance.p1.transform;
+        if (this.GetComponent<PlayerChoose>().player == 2)
+            playerCar = GameController.instance.p2.transform;
+    }
+    private void Start()
+    {
+        Invoke("ChoosePlayer", 0.1f);
+       
+    }
+    void GetPlayerCar(){
 
 		// Return if we don't have player car.
 		if(!playerCar)
