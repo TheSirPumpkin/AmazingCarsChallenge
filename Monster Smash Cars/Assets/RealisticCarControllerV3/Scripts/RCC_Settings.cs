@@ -38,9 +38,15 @@ public class RCC_Settings : ScriptableObject {
 	// Keyboard Inputs
 	public string verticalInput = "Vertical";
 	public string horizontalInput = "Horizontal";
-	public KeyCode handbrakeKB = KeyCode.Space;
+    public string verticalInput2 = "Vertical2";
+    public string horizontalInput2 = "Horizontal2";
+    public KeyCode handbrakeKB = KeyCode.Space;
 	public KeyCode startEngineKB = KeyCode.I;
-	public KeyCode lowBeamHeadlightsKB = KeyCode.L;
+
+    public KeyCode handbrakeKB2 = KeyCode.RightShift;
+    public KeyCode startEngineKB2 = KeyCode.P;
+
+    public KeyCode lowBeamHeadlightsKB = KeyCode.L;
 	public KeyCode highBeamHeadlightsKB = KeyCode.K;
 	public KeyCode rightIndicatorKB = KeyCode.E;
 	public KeyCode leftIndicatorKB = KeyCode.Q;
@@ -48,8 +54,11 @@ public class RCC_Settings : ScriptableObject {
 	public KeyCode shiftGearUp = KeyCode.LeftShift;
 	public KeyCode shiftGearDown = KeyCode.LeftControl;
 	public KeyCode NGear = KeyCode.N;
+
 	public KeyCode boostKB = KeyCode.F;
-	public KeyCode slowMotionKB = KeyCode.G;
+    public KeyCode boostKB2 = KeyCode.M;
+
+    public KeyCode slowMotionKB = KeyCode.G;
 	public KeyCode changeCameraKB = KeyCode.C;
 	public KeyCode enterExitVehicleKB = KeyCode.E;
 

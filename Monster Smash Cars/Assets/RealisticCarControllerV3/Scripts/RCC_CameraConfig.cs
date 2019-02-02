@@ -14,7 +14,7 @@ using System.Collections;
 /// </summary>
 [AddComponentMenu("BoneCracker Games/Realistic Car Controller/Camera/Auto Camera Config")]
 public class RCC_CameraConfig : MonoBehaviour {
-
+    public int player;
 	public bool automatic = true;
 	private Bounds combinedBounds;
 

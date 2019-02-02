@@ -20,7 +20,7 @@ using UnityEngine.EventSystems;
 /// Main vehicle controller that includes Wheels, Steering, Suspensions, Mechanic Configuration, Stability, Lights, Sounds, and Damage.
 /// </summary>
 public class RCC_CarControllerV3 : MonoBehaviour {
-
+    int player;
 	// Getting an Instance of Main Shared RCC Settings.
 	#region RCC Settings Instance
 
@@ -451,7 +451,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	}
 
 	void Start(){
-
+        player = GetComponent<RCC_CameraConfig>().player;
 		// Firing an event when each RCC car spawned / enabled. This event has been listening by RCC_MobileButtons.cs, RCC_DashboardInputs.cs.
 		if (!AIController) {
 			
@@ -845,18 +845,28 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	}
 
 	void Inputs(){
-		
-		switch(RCCSettings.controllerType){
 
-		case RCC_Settings.ControllerType.Keyboard:
-			
-			gasInput = Input.GetAxis(RCCSettings.verticalInput);
-			brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput));
-			handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
-			steerInput = Input.GetAxis(RCCSettings.horizontalInput);
-			boostInput = Input.GetKey(RCCSettings.boostKB) ? 2.5f : 1f;
+        switch (RCCSettings.controllerType) {
 
-			if(Input.GetKeyDown(RCCSettings.lowBeamHeadlightsKB)){
+            case RCC_Settings.ControllerType.Keyboard:
+
+                if (player == 1)
+                {
+                    gasInput = Input.GetAxis(RCCSettings.verticalInput);
+                    brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput));
+                    steerInput = Input.GetAxis(RCCSettings.horizontalInput);
+                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
+			        boostInput = Input.GetKey(RCCSettings.boostKB) ? 2.5f : 1f;
+                }
+                if (player == 2)
+                {
+                    gasInput = Input.GetAxis(RCCSettings.verticalInput2);
+                    brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput2));
+                    steerInput = Input.GetAxis(RCCSettings.horizontalInput2);
+                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB2) ? 1f : 0f;
+                    boostInput = Input.GetKey(RCCSettings.boostKB2) ? 2.5f : 1f;
+                }
+                if (Input.GetKeyDown(RCCSettings.lowBeamHeadlightsKB)){
 				lowBeamHeadLightsOn = !lowBeamHeadLightsOn;
 			}
 
