@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour {
     public  GameObject[] players;
     public RCC_CameraConfig p1, p2;
     int player1Points, player2Points;
+    public Text timer1, timer2;
+    float Timer;
+    public GameObject levelEnd1, levelEnd2;
+    public GameObject player1Won, player2Won, DRAW1, DRAW2, player1Lose, player2Lose;
 
     private void Awake()
     {
@@ -17,7 +21,7 @@ public class GameController : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        
+        Timer = 120;
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
         player2Cars[PlayerPrefs.GetInt("Player2Car")].SetActive(true);
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -30,12 +34,42 @@ public class GameController : MonoBehaviour {
             }
         }
 	}
-	
+    public void BackToMenu()
+    {
+        Application.LoadLevel(0);
+    }
 	// Update is called once per frame
 	void Update () {
-       
+        Timer -= Time.deltaTime;
+        timer1.text = "Time reamining: " + (int)Timer;
+        timer2.text = "Time reamining: " + (int)Timer;
+        if (Timer < 0)
+        {
+            if (player1Points > player2Points)
+            {
+                player1Won.SetActive(true);
+                player2Lose.SetActive(true);
+            }
+            if (player2Points > player1Points)
+            {
+                player2Won.SetActive(true);
+                player1Lose.SetActive(true);
+              
+            }
+
+            if (player2Points == player1Points)
+            {
+                DRAW1.SetActive(true);
+                DRAW2.SetActive(true);
+            }
+
+            levelEnd1.SetActive(true);
+            levelEnd2.SetActive(true);
+        }
         player1Points = p1.points;
         player2Points = p2.points;
+        if (player1Points < 0) player1Points = 0;
+        if (player2Points < 0) player2Points = 0;
         if (player1Points >= player2Points)
         {
             score1.text = "Player1 LEADING " + player1Points;
