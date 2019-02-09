@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4000012143083026}
   - component: {fileID: 33000013537916074}
   - component: {fileID: 23000013324198352}
-  - component: {fileID: 65000012260598990}
+  - component: {fileID: 65360769345245520}
   m_Layer: 0
   m_Name: Cargo_container_v1_LD1doorL
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014059977858}
   m_Mesh: {fileID: 4300032, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
---- !u!65 &65000012260598990
+--- !u!65 &65360769345245520
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,5 +94,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.064015865, y: 2.6797569, z: 1.4415474}
-  m_Center: {x: 0.00000023841858, y: 0, z: 0.7213371}
+  m_Size: {x: 0.0960238, y: 4.019635, z: 2.1623209}
+  m_Center: {x: 0.00000035762787, y: 0, z: 1.0820056}

@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 418498}
   - component: {fileID: 3377964}
   - component: {fileID: 2374798}
-  - component: {fileID: 64000013019363080}
+  - component: {fileID: 64102473238994188}
   m_Layer: 0
   m_Name: Garbage_ground
   m_TagString: Untagged
@@ -84,7 +84,7 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139316}
   m_IsPrefabAsset: 1
---- !u!64 &64000013019363080
+--- !u!64 &64102473238994188
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: eafb1abfc3d05574b896bd658cee2c19, type: 3}

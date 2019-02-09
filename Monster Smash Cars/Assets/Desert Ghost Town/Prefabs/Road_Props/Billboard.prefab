@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 418940}
   - component: {fileID: 3339832}
   - component: {fileID: 2358524}
-  - component: {fileID: 64000011909454482}
+  - component: {fileID: 64606000399879082}
   m_Layer: 0
   m_Name: Billboard
   m_TagString: Untagged
@@ -84,7 +84,7 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197034}
   m_IsPrefabAsset: 1
---- !u!64 &64000011909454482
+--- !u!64 &64606000399879082
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

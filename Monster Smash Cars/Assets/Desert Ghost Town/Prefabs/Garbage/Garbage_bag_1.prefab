@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 429002}
   - component: {fileID: 3389248}
   - component: {fileID: 2369700}
-  - component: {fileID: 64000011501139940}
+  - component: {fileID: 64430019237157316}
   m_Layer: 0
   m_Name: Garbage_bag_1
   m_TagString: Untagged
@@ -84,7 +84,7 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176898}
   m_IsPrefabAsset: 1
---- !u!64 &64000011501139940
+--- !u!64 &64430019237157316
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b910571df28a5d64183cec4686933731, type: 3}

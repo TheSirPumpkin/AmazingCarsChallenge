@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 485620}
   - component: {fileID: 3317114}
   - component: {fileID: 2325862}
-  - component: {fileID: 64000014097889524}
+  - component: {fileID: 64356267811273430}
   m_Layer: 0
   m_Name: Road_Barrier_03
   m_TagString: Untagged
@@ -84,7 +84,7 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117660}
   m_IsPrefabAsset: 1
---- !u!64 &64000014097889524
+--- !u!64 &64356267811273430
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: fe4af223f57a98b47913144b91314df3, type: 3}
