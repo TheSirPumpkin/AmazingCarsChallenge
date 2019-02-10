@@ -170,7 +170,7 @@ public class MenuController : MonoBehaviour {
                     }
                 }
             }
-
+            //ті хуй
             if (!next)
             {
                 for (int j = player2Cars.Length-1; j > -1; j--)
