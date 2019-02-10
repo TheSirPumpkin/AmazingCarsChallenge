@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+    public GameObject singlePlayer, multiPlayer, player1CarsObj, player2CarsObj;
     public static GameController instance;
     public GameObject[] player1Cars, player2Cars;
     public Text score1,score11, score2,score22;
@@ -18,6 +19,17 @@ public class GameController : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+        if (PlayerPrefs.GetInt("Single") == 1)
+        {
+            player1CarsObj.SetActive(true);
+            singlePlayer.SetActive(true);
+        }
+        else
+        {
+            player1CarsObj.SetActive(true);
+            player2CarsObj.SetActive(true);
+            multiPlayer.SetActive(true);
+        }
     }
     // Use this for initialization
     void Start () {
@@ -38,8 +50,19 @@ public class GameController : MonoBehaviour {
     {
         Application.LoadLevel(0);
     }
-	// Update is called once per frame
-	void Update () {
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        AudioListener.volume = 0;
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        AudioListener.volume = PlayerPrefs.GetInt("Sound");
+    }
+
+    // Update is called once per frame
+    void Update () {
         Timer -= Time.deltaTime;
         timer1.text = "Time reamining: " + (int)Timer;
         timer2.text = "Time reamining: " + (int)Timer;

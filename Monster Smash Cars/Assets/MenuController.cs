@@ -5,7 +5,12 @@ using UnityEngine;
 public class MenuController : MonoBehaviour {
     public Color[] colors;
     public GameObject[] player1Cars, player2Cars;
-	// Use this for initialization
+
+    public void SetMode(int mode)
+    {
+        if (mode == 1) PlayerPrefs.SetInt("Single", 1);
+                if (mode == 2) PlayerPrefs.SetInt("Single", 0);
+    }
 	void Start () {
        // PlayerPrefs.SetInt("Player1Car", 0);
        //  PlayerPrefs.SetInt("Player2Car", 0);
