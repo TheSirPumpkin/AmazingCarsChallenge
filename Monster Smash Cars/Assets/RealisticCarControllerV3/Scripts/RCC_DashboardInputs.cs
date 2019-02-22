@@ -14,7 +14,7 @@ using System.Collections;
 /// </summary>
 [AddComponentMenu("BoneCracker Games/Realistic Car Controller/UI/Dashboard Inputs")]
 public class RCC_DashboardInputs : MonoBehaviour {
-
+    public int Player;
 	// Getting an Instance of Main Shared RCC Settings.
 	#region RCC Settings Instance
 
@@ -63,12 +63,24 @@ public class RCC_DashboardInputs : MonoBehaviour {
 		RCC_CarControllerV3.OnRCCPlayerSpawned += RCC_CarControllerV3_OnRCCSpawned;
 
 	}
+    void GetCar1()
+    { GetVehicle(GameController.instance.p1.GetComponent<RCC_CarControllerV3>()); }
+    void GetCar2()
+    { GetVehicle(GameController.instance.p2.GetComponent<RCC_CarControllerV3>()); }
+    void RCC_CarControllerV3_OnRCCSpawned (RCC_CarControllerV3 RCC){
+        if (Player == 1)
+        {
+            Invoke("GetCar1", 1);
+           
+        }
 
-	void RCC_CarControllerV3_OnRCCSpawned (RCC_CarControllerV3 RCC){
-		
-		GetVehicle (RCC);
+        if (Player == 2)
+        {
+            Invoke("GetCar2", 1);
+          
+        }
 
-	}
+    }
 
 	void Update(){
 

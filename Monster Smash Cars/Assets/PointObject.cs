@@ -18,6 +18,23 @@ public class PointObject : MonoBehaviour {
     {
         if (other.GetComponent<RCC_CameraConfig>())
         {
+            if (value < 0 && other.GetComponent<RCC_CameraConfig>().player == 1)
+            {
+                GameController.instance.p1Minus.SetActive(true);
+            }
+            if (value > 0 && other.GetComponent<RCC_CameraConfig>().player == 1)
+            {
+                GameController.instance.p1Plus.SetActive(true);
+            }
+            if (value < 0 && other.GetComponent<RCC_CameraConfig>().player == 2)
+            {
+                GameController.instance.p2Minus.SetActive(true);
+            }
+            if (value > 0 && other.GetComponent<RCC_CameraConfig>().player == 2)
+            {
+                GameController.instance.p2Plus.SetActive(true);
+            }
+
             GetComponent<MeshRenderer>().enabled = false;
             //SpawnSystem.instance.Respawn(this.transform);
             other.GetComponent<RCC_CameraConfig>().points += value;

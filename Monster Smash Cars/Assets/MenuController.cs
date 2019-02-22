@@ -12,6 +12,7 @@ public class MenuController : MonoBehaviour {
                 if (mode == 2) PlayerPrefs.SetInt("Single", 0);
     }
 	void Start () {
+        Time.timeScale = 1;
        // PlayerPrefs.SetInt("Player1Car", 0);
        //  PlayerPrefs.SetInt("Player2Car", 0);
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
