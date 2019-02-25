@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorChanger : MonoBehaviour {
-    
+    public int ID, price;
     public Color[] colors;
 	// Use this for initialization
 	void Start () {

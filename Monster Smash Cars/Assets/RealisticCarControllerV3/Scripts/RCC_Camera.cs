@@ -133,7 +133,7 @@ public class RCC_Camera : MonoBehaviour{
     {
         if (this.GetComponent<PlayerChoose>().player == 1)
             playerCar = GameController.instance.p1.transform;
-        if (this.GetComponent<PlayerChoose>().player == 2)
+        if (this.GetComponent<PlayerChoose>().player == 2&& GameController.instance.p2)
             playerCar = GameController.instance.p2.transform;
     }
     private void Start()

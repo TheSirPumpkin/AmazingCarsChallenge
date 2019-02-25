@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour {
+    public GameObject Locked;
+    public Text pointsText;
+    public int ptsInt;
     public Color[] colors;
     public GameObject[] player1Cars, player2Cars;
 
@@ -11,8 +15,37 @@ public class MenuController : MonoBehaviour {
         if (mode == 1) PlayerPrefs.SetInt("Single", 1);
                 if (mode == 2) PlayerPrefs.SetInt("Single", 0);
     }
+    public void TimeAttack()
+    {
+        PlayerPrefs.SetInt("Free", 0);
+    }
+    public void FreeRide()
+    {
+        PlayerPrefs.SetInt("Free", 1);
+    }
+    public void Unlock()
+    {
+        if (PlayerPrefs.GetInt("Single") == 1)
+        {
+            foreach (GameObject car in player1Cars)
+            {
+                if (car.activeSelf == true&&ptsInt>= car.GetComponent<ColorChanger>().price)
+                {
+                    PlayerPrefs.SetInt("CarBought" + car.name, 1);
+                    Locked.SetActive(false);
+                    ptsInt -= car.GetComponent<ColorChanger>().price;
+                    PlayerPrefs.SetInt("Points", ptsInt);
+
+
+
+                }
+            }
+        }
+    }
 	void Start () {
-        Time.timeScale = 1;
+        ptsInt = PlayerPrefs.GetInt("Points");
+        PlayerPrefs.SetInt("CarBought" + player1Cars[0].name,1);
+Time.timeScale = 1;
        // PlayerPrefs.SetInt("Player1Car", 0);
        //  PlayerPrefs.SetInt("Player2Car", 0);
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
@@ -31,7 +64,14 @@ public class MenuController : MonoBehaviour {
                         if (i < player1Cars.Length - 1)
                         {
                             player1Cars[i].SetActive(false);
-                            PlayerPrefs.SetInt("Player1Car", i + 1);
+                            if (PlayerPrefs.GetInt("Single") == 1)
+                            {
+
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i].name) == 1)
+                                {
+                                    PlayerPrefs.SetInt("Player1Car", i + 1);
+                                }
+                            } else PlayerPrefs.SetInt("Player1Car", i + 1);
                             player1Cars[i + 1].SetActive(true);
                            
                           
@@ -41,7 +81,17 @@ public class MenuController : MonoBehaviour {
                         {
                             player1Cars[i].SetActive(false);
                             player1Cars[0].SetActive(true);
-                            PlayerPrefs.SetInt("Player1Car", 0);
+                            if (PlayerPrefs.GetInt("Single") == 1)
+                            {
+
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[0].name) == 1)
+                                {
+                                    PlayerPrefs.SetInt("Player1Car", 0);
+                                }
+                            }
+                            else PlayerPrefs.SetInt("Player1Car", 0);
+
+
                             return;
                         }
 
@@ -58,7 +108,16 @@ public class MenuController : MonoBehaviour {
                         if (i > 0)
                         {
                             player1Cars[i].SetActive(false);
-                            PlayerPrefs.SetInt("Player1Car", i - 1);
+                            if (PlayerPrefs.GetInt("Single") == 1)
+                            {
+
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i - 1].name) == 1)
+                                {
+                                    PlayerPrefs.SetInt("Player1Car", i - 1);
+                                }
+                            }
+                            else PlayerPrefs.SetInt("Player1Car", i - 1);
+
                             player1Cars[i - 1].SetActive(true);
                             
                             return;
@@ -67,7 +126,16 @@ public class MenuController : MonoBehaviour {
                         {
                             player1Cars[i].SetActive(false);
                             player1Cars[6].SetActive(true);
-                            PlayerPrefs.SetInt("Player1Car", 6);
+                            if (PlayerPrefs.GetInt("Single") == 1)
+                            {
+
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[6].name) == 1)
+                                {
+                                    PlayerPrefs.SetInt("Player1Car", 6);
+                                }
+                            }
+                            else PlayerPrefs.SetInt("Player1Car", 6);
+
                             return;
                         }
 
@@ -324,6 +392,22 @@ public class MenuController : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
+        pointsText.text = "YOU HAVE: " + ptsInt+" PTS";
+        ptsInt = PlayerPrefs.GetInt("Points");
+        if (PlayerPrefs.GetInt("Single") == 1)
+        {
+            foreach (GameObject car in player1Cars)
+            {
+                if (car.activeSelf == true)
+                {
+                    if (PlayerPrefs.GetInt("CarBought" + car.name) == 1)
+                    {
+                        Locked.SetActive(false);
+                    }
+                    else Locked.SetActive(true);
+                }
+            }
+        }
         if (Input.GetKeyDown(KeyCode.RightArrow))
             ChangeCar(true,2);
         if (Input.GetKeyDown(KeyCode.LeftArrow))

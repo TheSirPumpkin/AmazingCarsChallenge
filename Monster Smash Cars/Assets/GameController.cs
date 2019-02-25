@@ -21,10 +21,13 @@ public class GameController : MonoBehaviour {
     float Timer;
     public GameObject levelEnd1, levelEnd2;
     public GameObject player1Won, player2Won, DRAW1, DRAW2, player1Lose, player2Lose;
+    bool levelOver;
     void OnEnable()
     {
 
     }
+
+   
         private void Awake()
    
         {
@@ -45,12 +48,17 @@ public class GameController : MonoBehaviour {
         }
     }
     // Use this for initialization
-    void Start () { Time.timeScale = 1;
+    void Start () {
+        Time.timeScale = 1;
         p1Plus = GameObject.FindGameObjectWithTag("PlayerOnePlus");
         p1Minus= GameObject.FindGameObjectWithTag("PlayerOneMinus");
         p2Plus = GameObject.FindGameObjectWithTag("PlayerTwoPlus");
         p2Minus = GameObject.FindGameObjectWithTag("PlayerTwoMinus");
-        
+        p1Plus.SetActive(false);
+        p1Minus.SetActive(false);
+        p2Plus.SetActive(false);
+        p2Minus.SetActive(false);
+        AudioListener.volume = PlayerPrefs.GetInt("Sound");
         Timer = 120;
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
         player2Cars[PlayerPrefs.GetInt("Player2Car")].SetActive(true);
@@ -66,6 +74,12 @@ public class GameController : MonoBehaviour {
 	}
     public void BackToMenu()
     {
+        if (PlayerPrefs.GetInt("Free") ==1&& PlayerPrefs.GetInt("Single") == 1)
+        {
+            PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points") + player1Points);
+            levelOver = true;
+
+        }
         Application.LoadLevel(0);
     }
     public void Pause()
@@ -106,19 +120,36 @@ public class GameController : MonoBehaviour {
         {
             Pause();
         }
+        if (PlayerPrefs.GetInt("Free")==0)
         Timer -= Time.deltaTime;
         if (!multi)
         {
+            if (p1.points < 0) p1.points = 0;
             player1Points = p1.points;
-            singleTimer.text = "" + (int)Timer;
+            if (PlayerPrefs.GetInt("Free") == 0)
+                singleTimer.text = "" + (int)Timer;
+            else singleTimer.text = "";
             singleScore.text = "" + player1Points;
+            if(Timer <= 0&&!levelOver)
+            {
+                if (PlayerPrefs.GetInt("Free") == 0)
+                    PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
+                if (PlayerPrefs.GetInt("Free") == 1)
+                    PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points") + player1Points) ;
+                levelOver = true;
+
+            }
         }
        
         if (multi)
         {
-            timer1.text = "" + (int)Timer;
-            timer2.text = "" + (int)Timer;
-            if (Timer < 0)
+            if (PlayerPrefs.GetInt("Free") == 0)
+                timer1.text = "" + (int)Timer;
+            else timer2.text = "";
+            if (PlayerPrefs.GetInt("Free") == 0)
+                timer2.text = "" + (int)Timer;
+            else timer2.text = "";
+            if (Timer <= 0)
             {
                 if (player1Points > player2Points)
                 {

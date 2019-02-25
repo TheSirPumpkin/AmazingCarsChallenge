@@ -66,7 +66,8 @@ public class RCC_DashboardInputs : MonoBehaviour {
     void GetCar1()
     { GetVehicle(GameController.instance.p1.GetComponent<RCC_CarControllerV3>()); }
     void GetCar2()
-    { GetVehicle(GameController.instance.p2.GetComponent<RCC_CarControllerV3>()); }
+    {if(GameController.instance.p2)
+        GetVehicle(GameController.instance.p2.GetComponent<RCC_CarControllerV3>()); }
     void RCC_CarControllerV3_OnRCCSpawned (RCC_CarControllerV3 RCC){
         if (Player == 1)
         {
