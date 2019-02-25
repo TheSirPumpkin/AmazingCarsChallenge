@@ -26,21 +26,23 @@ public class RCC_CreateAudioSource : MonoBehaviour {
 		source.transform.position = go.transform.position;
 		source.transform.rotation = go.transform.rotation;
 		source.transform.parent = go.transform;
-
-		//audioSource.GetComponent<AudioSource>().priority =1;
-		source.minDistance = minDistance;
-		source.maxDistance = maxDistance;
-		source.volume = volume;
-		source.clip = audioClip;
+        //source.reverbZoneMix = 0;
+       // source.spatialBlend = 0f;
+        //audioSource.GetComponent<AudioSource>().priority =1;
+        source.minDistance = minDistance*5;
+		source.maxDistance = maxDistance*5;
+        //source.volume = 0.5f;//source.volume=volume;
+        source.volume = volume;
+        source.clip = audioClip;
 		source.loop = loop;
 		source.dopplerLevel = .5f;
 
-		if(minDistance == 0 && maxDistance == 0)
-			source.spatialBlend = 0f;
-		else
-			source.spatialBlend = 1f;
+        if (minDistance == 0 && maxDistance == 0)
+            source.spatialBlend = 0f;
+        else
+            source.spatialBlend = 1f;
 
-		if (playNow) {
+        if (playNow) {
 			source.playOnAwake = true;
 			source.Play ();
 		} else {
