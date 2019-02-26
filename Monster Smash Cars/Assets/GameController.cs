@@ -56,8 +56,11 @@ public class GameController : MonoBehaviour {
         p2Minus = GameObject.FindGameObjectWithTag("PlayerTwoMinus");
         p1Plus.SetActive(false);
         p1Minus.SetActive(false);
-        p2Plus.SetActive(false);
-        p2Minus.SetActive(false);
+        if (p2Plus && p2Minus)
+        {
+            p2Plus.SetActive(false);
+            p2Minus.SetActive(false);
+        }
         AudioListener.volume = PlayerPrefs.GetInt("Sound");
         Timer = 120;
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);

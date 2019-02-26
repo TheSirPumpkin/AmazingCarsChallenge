@@ -43,6 +43,7 @@ public class MenuController : MonoBehaviour {
         }
     }
 	void Start () {
+      //  PlayerPrefs.DeleteAll();
         ptsInt = PlayerPrefs.GetInt("Points");
         PlayerPrefs.SetInt("CarBought" + player1Cars[0].name,1);
 Time.timeScale = 1;

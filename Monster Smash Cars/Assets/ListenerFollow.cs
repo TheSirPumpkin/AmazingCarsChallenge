@@ -14,6 +14,6 @@ public class ListenerFollow : MonoBehaviour {
 	void Update () {
         Vector3 objectLine = (main.p1.transform.position - main.p2.transform.position);
         objectLine = objectLine.normalized;
-        transform.position = objectLine;
+        transform.position = objectLine + new Vector3(0, 35, 0);
     }
 }
