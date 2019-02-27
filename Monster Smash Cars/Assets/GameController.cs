@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+    public GameObject ResumeButton;
+    public GameObject TimeOver;
     bool multi;
     public Text singleScore, singleTimer;
     public GameObject PauseCanvas;
@@ -87,38 +89,42 @@ public class GameController : MonoBehaviour {
     }
     public void Pause()
     {
-        if (Time.timeScale > 0)
-        {
+       // if (!levelOver)
+       // {
             singlePlayer.SetActive(false);
             multiPlayer.SetActive(false);
+      //  }
             PauseCanvas.SetActive(true);
             Time.timeScale = 0;
             AudioListener.volume = 0;
             return;
-        }
+        
     }
     public void Resume()
     {
-        Debug.Log("Resume");
-        PauseCanvas.SetActive(false);
-        Time.timeScale = 1;
-        AudioListener.volume = PlayerPrefs.GetInt("Sound");
-        if (PlayerPrefs.GetInt("Single") == 1)
+        if (!levelOver)
         {
+            Debug.Log("Resume");
+            PauseCanvas.SetActive(false);
+            Time.timeScale = 1;
+            AudioListener.volume = PlayerPrefs.GetInt("Sound");
+            if (PlayerPrefs.GetInt("Single") == 1)
+            {
 
-            singlePlayer.SetActive(true);
-        }
-        else
-        {
+                singlePlayer.SetActive(true);
+            }
+            else
+            {
 
-            multiPlayer.SetActive(true);
+                multiPlayer.SetActive(true);
+            }
         }
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (levelOver) ResumeButton.SetActive(false);
         if (Input.GetKeyDown(KeyCode.P))
         {
             Pause();
@@ -129,7 +135,7 @@ public class GameController : MonoBehaviour {
         {
             if (p1.points < 0) p1.points = 0;
             player1Points = p1.points;
-            if (PlayerPrefs.GetInt("Free") == 0)
+            if (PlayerPrefs.GetInt("Free") == 0&& Timer>=0)
                 singleTimer.text = "" + (int)Timer;
             else singleTimer.text = "";
             singleScore.text = "" + player1Points;
@@ -139,6 +145,8 @@ public class GameController : MonoBehaviour {
                     PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
                 if (PlayerPrefs.GetInt("Free") == 1)
                     PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points") + player1Points) ;
+                Time.timeScale = 0;
+                TimeOver.SetActive(true);
                 levelOver = true;
 
             }
@@ -154,6 +162,7 @@ public class GameController : MonoBehaviour {
             else timer2.text = "";
             if (Timer <= 0)
             {
+                Time.timeScale = 0;
                 if (player1Points > player2Points)
                 {
                     player1Won.SetActive(true);
