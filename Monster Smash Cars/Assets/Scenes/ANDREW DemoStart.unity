@@ -37889,7 +37889,7 @@ MonoBehaviour:
   - {fileID: 454329987}
   - {fileID: 483522057}
   - {fileID: 2106542527}
-  hudColor: {r: 0, g: 0.751724, b: 1, a: 1}
+  hudColor: {r: 1, g: 1, b: 1, a: 1}
   hudColor_R: {fileID: 1825483892}
   hudColor_G: {fileID: 1566875179}
   hudColor_B: {fileID: 947818821}
@@ -53829,7 +53829,7 @@ MonoBehaviour:
   - {fileID: 656798746}
   - {fileID: 1242111190}
   - {fileID: 1258608831}
-  hudColor: {r: 0, g: 0.751724, b: 1, a: 1}
+  hudColor: {r: 1, g: 1, b: 1, a: 1}
   hudColor_R: {fileID: 1209095585}
   hudColor_G: {fileID: 1671947644}
   hudColor_B: {fileID: 441417890}
@@ -65927,6 +65927,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11424040, guid: 3c49455ff7757444fa4b466c3250f423, type: 2}
       propertyPath: Player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457982, guid: 3c49455ff7757444fa4b466c3250f423, type: 2}
+      propertyPath: hudColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457982, guid: 3c49455ff7757444fa4b466c3250f423, type: 2}
+      propertyPath: hudColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457982, guid: 3c49455ff7757444fa4b466c3250f423, type: 2}
+      propertyPath: hudColor.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -99661,7 +99673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.784}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
