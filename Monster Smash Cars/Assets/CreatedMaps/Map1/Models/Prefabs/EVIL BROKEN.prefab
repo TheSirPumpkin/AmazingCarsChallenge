@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4628914274618064}
+  - component: {fileID: 95766542455328766}
   m_Layer: 0
   m_Name: EVIL BROKEN
   m_TagString: Untagged
@@ -247,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517842478400088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.227005, y: 0.000009327689, z: -22.177374}
+  m_LocalPosition: {x: 5.327263, y: 0.000011638344, z: -41.560547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4496387982532464}
@@ -623,3 +624,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570153439656378}
   m_Mesh: {fileID: 4300000, guid: f5a66a6cf1d01f842b0f05bbfdc83313, type: 3}
+--- !u!95 &95766542455328766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517842478400088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59adc04794ef6e3438cb47fcbe0a3771, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
