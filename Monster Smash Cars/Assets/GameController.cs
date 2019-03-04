@@ -129,8 +129,10 @@ public class GameController : MonoBehaviour {
         {
             Pause();
         }
-        if (PlayerPrefs.GetInt("Free")==0)
-        Timer -= Time.deltaTime;
+        if (PlayerPrefs.GetInt("Free") == 0)
+        {
+            Timer -= Time.deltaTime;
+        }
         if (!multi)
         {
             if (p1.points < 0) p1.points = 0;
@@ -139,12 +141,10 @@ public class GameController : MonoBehaviour {
                 singleTimer.text = "" + (int)Timer;
             else singleTimer.text = "";
             singleScore.text = "" + player1Points;
-            if(Timer <= 0&&!levelOver)
+            if(Timer <= 0&&!levelOver&& PlayerPrefs.GetInt("Free") == 0)
             {
-                if (PlayerPrefs.GetInt("Free") == 0)
+                
                     PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
-                if (PlayerPrefs.GetInt("Free") == 1)
-                    PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points") + player1Points) ;
                 Time.timeScale = 0;
                 TimeOver.SetActive(true);
                 levelOver = true;
@@ -184,10 +184,11 @@ public class GameController : MonoBehaviour {
                 levelEnd1.SetActive(true);
                 levelEnd2.SetActive(true);
             }
+          
+            if (p1.points < 0) p1.points = 0;
+            if (p2.points < 0) p2.points = 0;
             player1Points = p1.points;
             player2Points = p2.points;
-            if (player1Points < 0) player1Points = 0;
-            if (player2Points < 0) player2Points = 0;
             if (player1Points >= player2Points)
             {
                 p1YellowWin.SetActive(true);

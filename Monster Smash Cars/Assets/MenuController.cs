@@ -12,8 +12,20 @@ public class MenuController : MonoBehaviour {
 
     public void SetMode(int mode)
     {
-        if (mode == 1) PlayerPrefs.SetInt("Single", 1);
-                if (mode == 2) PlayerPrefs.SetInt("Single", 0);
+        if (mode == 1)
+        {  PlayerPrefs.SetInt("Player1Car", 0);
+            foreach(GameObject car in player1Cars)
+            {
+                car.SetActive(false);
+            }
+            player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
+            PlayerPrefs.SetInt("Single", 1);
+        }
+            if (mode == 2)
+        {
+          
+            PlayerPrefs.SetInt("Single", 0);
+        }
     }
     public void TimeAttack()
     {
@@ -25,6 +37,7 @@ public class MenuController : MonoBehaviour {
     }
     public void Unlock()
     {
+        Debug.Log(PlayerPrefs.GetInt("Single"));
         if (PlayerPrefs.GetInt("Single") == 1)
         {
             foreach (GameObject car in player1Cars)
@@ -68,7 +81,7 @@ Time.timeScale = 1;
                             if (PlayerPrefs.GetInt("Single") == 1)
                             {
 
-                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i].name) == 1)
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i+1].name) == 1)
                                 {
                                     PlayerPrefs.SetInt("Player1Car", i + 1);
                                 }
