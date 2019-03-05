@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PointObject : MonoBehaviour {
     public int value;
+    public GameObject dead, toDisable;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +19,7 @@ public class PointObject : MonoBehaviour {
     {
         if (other.GetComponent<RCC_CameraConfig>())
         {
+            GetComponentInChildren<MeshRenderer>().enabled = false;
             if (value < 0 && other.GetComponent<RCC_CameraConfig>().player == 1)
             {
                 GameController.instance.p1Minus.SetActive(true);
@@ -34,8 +36,8 @@ public class PointObject : MonoBehaviour {
             {
                 GameController.instance.p2Plus.SetActive(true);
             }
-
-            GetComponent<MeshRenderer>().enabled = false;
+            dead.SetActive(true);
+            toDisable.SetActive(false);
             //SpawnSystem.instance.Respawn(this.transform);
             other.GetComponent<RCC_CameraConfig>().points += value;
             transform.parent.GetComponent<PointScript>().busy = false;

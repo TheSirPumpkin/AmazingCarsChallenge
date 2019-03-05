@@ -422,23 +422,23 @@ Time.timeScale = 1;
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            ChangeCar(true,2);
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            ChangeCar(false,2);
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            ChangeColor(true, 2);
+            ChangeCar(true,2);
         if (Input.GetKeyDown(KeyCode.DownArrow))
+            ChangeCar(false,2);
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            ChangeColor(true, 2);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
             ChangeColor(false, 2);
 
 
-        if (Input.GetKeyDown(KeyCode.D))
-            ChangeCar(true, 1);
-        if (Input.GetKeyDown(KeyCode.A))
-            ChangeCar(false, 1);
         if (Input.GetKeyDown(KeyCode.W))
-            ChangeColor(true, 1);
+            ChangeCar(true, 1);
         if (Input.GetKeyDown(KeyCode.S))
+            ChangeCar(false, 1);
+        if (Input.GetKeyDown(KeyCode.D))
+            ChangeColor(true, 1);
+        if (Input.GetKeyDown(KeyCode.A))
             ChangeColor(false, 1);
 
 
