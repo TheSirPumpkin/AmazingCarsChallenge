@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 43470b1862fc6024a934d51b945280c9, type: 3}
+        m_Texture: {fileID: 2800000, guid: f62b5feb1ef8bed408f50bf40aa70a70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
