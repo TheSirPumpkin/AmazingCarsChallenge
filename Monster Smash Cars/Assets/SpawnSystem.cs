@@ -16,7 +16,7 @@ public class SpawnSystem : MonoBehaviour {
         timer = 20;
         foreach (Transform point in SpawnPoints)
         {
-            Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, Quaternion.identity);
+            Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, new Quaternion (point.localRotation.x, point.localRotation.y, point.localRotation.z, point.localRotation.w));
             spawnedObject.parent = point;
             point.GetComponent<PointScript>().busy = true;
         }
@@ -31,7 +31,7 @@ public class SpawnSystem : MonoBehaviour {
                 int chance = Random.Range(0, 2);
                 if (chance != 0)
                 {
-                    Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, Quaternion.identity);
+                    Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, new Quaternion(point.localRotation.x, point.localRotation.y, point.localRotation.z, point.localRotation.w));
                     spawnedObject.parent = point;
                     point.GetComponent<PointScript>().busy = true;
                 }
