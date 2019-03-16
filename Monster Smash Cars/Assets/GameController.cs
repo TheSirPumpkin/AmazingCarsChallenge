@@ -228,4 +228,65 @@ public class GameController : MonoBehaviour {
             }
         }
     }
+
+    public void VK()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://vk.com/lemur_interactive\")");
+#endif
+        //  Application.OpenURL("https://vk.com/lemur_interactive");
+    }
+    public void CrazyGames()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.crazygames.com/\")");
+#endif
+        //  Application.OpenURL("https://www.crazygames.com/");
+    }
+    public void GooglePlay()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"jopa\")");
+#endif
+        //  Application.OpenURL("jopa");
+    }
+    public void AppStore()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"jopa\")");
+#endif
+        //  Application.OpenURL("jopa");
+    }
+    public void Insta()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.instagram.com/lemur_interactive/\")");
+#endif
+        // Application.OpenURL("https://www.instagram.com/lemur_interactive/");
+    }
+
+    public void Face()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.facebook.com/groups/LEMURinteractive/\")");
+#endif
+        // Application.OpenURL("https://www.facebook.com/groups/LEMURinteractive/");
+    }
+
+    public void YouTube()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.youtube.com/channel/UCWi1pcZYkYcGXqUz1wuSSWA\")");
+#endif
+        //  Application.OpenURL("https://www.youtube.com/channel/UCWi1pcZYkYcGXqUz1wuSSWA");
+    }
+
+    public void Twitter()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://twitter.com/LEMURInteract\")");
+#endif
+        //  Application.OpenURL("https://twitter.com/LEMURInteract");
+    }
+
 }

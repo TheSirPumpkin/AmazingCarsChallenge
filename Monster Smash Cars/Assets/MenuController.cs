@@ -447,9 +447,9 @@ Time.timeScale = 1;
     public void VK()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://vk.com/zulueg\")");
+		Application.ExternalEval("window.open(\"https://vk.com/lemur_interactive\")");
 #endif
-        //  Application.OpenURL("https://vk.com/zulueg");
+        //  Application.OpenURL("https://vk.com/lemur_interactive");
     }
     public void CrazyGames()
     {
@@ -461,39 +461,47 @@ Time.timeScale = 1;
     public void GooglePlay()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://play.google.com/store/apps/details?id=com.TFGL.PTnightofpayoff\")");
+		Application.ExternalEval("window.open(\"jopa\")");
 #endif
-        //  Application.OpenURL("https://play.google.com/store/apps/details?id=com.TFGL.PTnightofpayoff");
+        //  Application.OpenURL("jopa");
     }
     public void AppStore()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://itunes.apple.com/us/app/pixel-cube-town-3d/id1288713565?mt=8\")");
+		Application.ExternalEval("window.open(\"jopa\")");
 #endif
-        //  Application.OpenURL("https://itunes.apple.com/us/app/pixel-cube-town-3d/id1288713565?mt=8");
+        //  Application.OpenURL("jopa");
     }
     public void Insta()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://www.instagram.com/zulu_extreme_games/\")");
+		Application.ExternalEval("window.open(\"https://www.instagram.com/lemur_interactive/\")");
 #endif
-        // Application.OpenURL("https://www.instagram.com/zulu_extreme_games/");
+        // Application.OpenURL("https://www.instagram.com/lemur_interactive/");
     }
 
     public void Face()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://www.facebook.com/zulugame\")");
+		Application.ExternalEval("window.open(\"https://www.facebook.com/groups/LEMURinteractive/\")");
 #endif
-        // Application.OpenURL("https://www.facebook.com/zulugame");
+        // Application.OpenURL("https://www.facebook.com/groups/LEMURinteractive/");
     }
 
     public void YouTube()
     {
 #if !UNITY_EDITOR
-		Application.ExternalEval("window.open(\"https://www.youtube.com/channel/UCfhUwZQ2AA2o6OY3xDJaUKQ/videos?view=0&sort=dd&shelf_id=0\")");
+		Application.ExternalEval("window.open(\"https://www.youtube.com/channel/UCWi1pcZYkYcGXqUz1wuSSWA\")");
 #endif
-        //  Application.OpenURL("https://www.youtube.com/channel/UCfhUwZQ2AA2o6OY3xDJaUKQ/videos?view=0&sort=dd&shelf_id=0");
+        //  Application.OpenURL("https://www.youtube.com/channel/UCWi1pcZYkYcGXqUz1wuSSWA");
+    }
+
+    public void Twitter()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://twitter.com/LEMURInteract\")");
+#endif
+        //  Application.OpenURL("https://twitter.com/LEMURInteract");
     }
 
 }
