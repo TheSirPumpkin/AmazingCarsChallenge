@@ -444,6 +444,56 @@ Time.timeScale = 1;
 
 
     }
+    public void VK()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://vk.com/zulueg\")");
+#endif
+        //  Application.OpenURL("https://vk.com/zulueg");
+    }
+    public void CrazyGames()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.crazygames.com/\")");
+#endif
+        //  Application.OpenURL("https://www.crazygames.com/");
+    }
+    public void GooglePlay()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://play.google.com/store/apps/details?id=com.TFGL.PTnightofpayoff\")");
+#endif
+        //  Application.OpenURL("https://play.google.com/store/apps/details?id=com.TFGL.PTnightofpayoff");
+    }
+    public void AppStore()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://itunes.apple.com/us/app/pixel-cube-town-3d/id1288713565?mt=8\")");
+#endif
+        //  Application.OpenURL("https://itunes.apple.com/us/app/pixel-cube-town-3d/id1288713565?mt=8");
+    }
+    public void Insta()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.instagram.com/zulu_extreme_games/\")");
+#endif
+        // Application.OpenURL("https://www.instagram.com/zulu_extreme_games/");
+    }
 
-  
+    public void Face()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.facebook.com/zulugame\")");
+#endif
+        // Application.OpenURL("https://www.facebook.com/zulugame");
+    }
+
+    public void YouTube()
+    {
+#if !UNITY_EDITOR
+		Application.ExternalEval("window.open(\"https://www.youtube.com/channel/UCfhUwZQ2AA2o6OY3xDJaUKQ/videos?view=0&sort=dd&shelf_id=0\")");
+#endif
+        //  Application.OpenURL("https://www.youtube.com/channel/UCfhUwZQ2AA2o6OY3xDJaUKQ/videos?view=0&sort=dd&shelf_id=0");
+    }
+
 }

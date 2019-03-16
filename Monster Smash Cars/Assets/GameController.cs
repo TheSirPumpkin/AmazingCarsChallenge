@@ -125,9 +125,14 @@ public class GameController : MonoBehaviour {
     void Update()
     {
         if (levelOver) ResumeButton.SetActive(false);
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)&&Timer> 0 && !levelOver && PlayerPrefs.GetInt("Free") == 0|| PlayerPrefs.GetInt("Free") == 1)
         {
             Pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P) && Timer <= 0 && PlayerPrefs.GetInt("Free") == 0 )
+        {
+            BackToMenu();
         }
         if (PlayerPrefs.GetInt("Free") == 0)
         {
