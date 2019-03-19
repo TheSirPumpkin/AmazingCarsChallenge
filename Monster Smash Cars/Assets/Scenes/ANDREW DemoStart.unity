@@ -16076,6 +16076,7 @@ GameObject:
   - component: {fileID: 288554668}
   - component: {fileID: 288554667}
   - component: {fileID: 288554666}
+  - component: {fileID: 288554669}
   m_Layer: 5
   m_Name: FACE
   m_TagString: Untagged
@@ -16176,6 +16177,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 288554664}
   m_CullTransparentMesh: 0
+--- !u!114 &288554669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 288554664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9447eaf39e789240be4a1653f9790e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1376774801}
+        m_MethodName: Face
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1001 &290504941
 Prefab:
   m_ObjectHideFlags: 0
@@ -46497,6 +46525,7 @@ GameObject:
   - component: {fileID: 884726460}
   - component: {fileID: 884726459}
   - component: {fileID: 884726458}
+  - component: {fileID: 884726461}
   m_Layer: 5
   m_Name: VK
   m_TagString: Untagged
@@ -46597,6 +46626,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884726456}
   m_CullTransparentMesh: 0
+--- !u!114 &884726461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884726456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9447eaf39e789240be4a1653f9790e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1376774801}
+        m_MethodName: VK
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &886432938
 GameObject:
   m_ObjectHideFlags: 0
@@ -51374,6 +51430,7 @@ GameObject:
   - component: {fileID: 968867591}
   - component: {fileID: 968867590}
   - component: {fileID: 968867589}
+  - component: {fileID: 968867592}
   m_Layer: 5
   m_Name: Insta
   m_TagString: Untagged
@@ -51474,6 +51531,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968867587}
   m_CullTransparentMesh: 0
+--- !u!114 &968867592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968867587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9447eaf39e789240be4a1653f9790e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1376774801}
+        m_MethodName: Insta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &969508228
 GameObject:
   m_ObjectHideFlags: 0
@@ -63076,6 +63160,7 @@ GameObject:
   - component: {fileID: 1193039389}
   - component: {fileID: 1193039388}
   - component: {fileID: 1193039387}
+  - component: {fileID: 1193039390}
   m_Layer: 5
   m_Name: YouTube
   m_TagString: Untagged
@@ -63176,6 +63261,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1193039385}
   m_CullTransparentMesh: 0
+--- !u!114 &1193039390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193039385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9447eaf39e789240be4a1653f9790e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1376774801}
+        m_MethodName: YouTube
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!4 &1193697189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779173273428950, guid: ef4279b04fe091744addec175a9eb31c,
@@ -98695,6 +98807,7 @@ GameObject:
   - component: {fileID: 1918945111}
   - component: {fileID: 1918945110}
   - component: {fileID: 1918945109}
+  - component: {fileID: 1918945112}
   m_Layer: 5
   m_Name: Twitter
   m_TagString: Untagged
@@ -98795,6 +98908,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918945107}
   m_CullTransparentMesh: 0
+--- !u!114 &1918945112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918945107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9447eaf39e789240be4a1653f9790e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1376774801}
+        m_MethodName: Twitter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: PressHandler+ButtonPressEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1919473473
 GameObject:
   m_ObjectHideFlags: 0
