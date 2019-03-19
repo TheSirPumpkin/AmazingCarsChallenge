@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour {
     }
     public void Pause()
     {
+        Debug.Log("Paused");
        // if (!levelOver)
        // {
             singlePlayer.SetActive(false);
@@ -125,7 +126,7 @@ public class GameController : MonoBehaviour {
     void Update()
     {
         if (levelOver) ResumeButton.SetActive(false);
-        if (Input.GetKeyDown(KeyCode.P)&&Timer> 0 && !levelOver && PlayerPrefs.GetInt("Free") == 0|| PlayerPrefs.GetInt("Free") == 1)
+        if (Input.GetKeyDown(KeyCode.P)&&Timer> 0 && !levelOver && PlayerPrefs.GetInt("Free") == 0|| PlayerPrefs.GetInt("Free") == 1&& Input.GetKeyDown(KeyCode.P))
         {
             Pause();
         }
