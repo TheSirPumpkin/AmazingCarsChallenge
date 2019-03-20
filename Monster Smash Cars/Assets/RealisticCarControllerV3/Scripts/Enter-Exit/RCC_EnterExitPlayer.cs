@@ -56,11 +56,11 @@ public class RCC_EnterExitPlayer : MonoBehaviour {
 
 				showGui = true;
 
-				if (Input.GetKeyDown (RCCSettings.enterExitVehicleKB)) {
+				//if (Input.GetKeyDown (RCCSettings.enterExitVehicleKB)) {
 
-					hit.transform.GetComponentInParent<RCC_CarControllerV3> ().SendMessage ("Act", rootOfPlayer, SendMessageOptions.DontRequireReceiver);
+				//	hit.transform.GetComponentInParent<RCC_CarControllerV3> ().SendMessage ("Act", rootOfPlayer, SendMessageOptions.DontRequireReceiver);
 					
-				}
+				//}
 
 			}else{
 
@@ -78,10 +78,10 @@ public class RCC_EnterExitPlayer : MonoBehaviour {
 	
 	void OnGUI (){
 		
-		if(showGui){
-			if(RCCSettings.controllerType == RCC_Settings.ControllerType.Keyboard)
-				GUI.Label( new Rect(Screen.width - (Screen.width/1.7f),Screen.height - (Screen.height/1.2f),800,100),"Press ''" + RCCSettings.enterExitVehicleKB.ToString() + "'' key to Get In");
-		}
+		//if(showGui){
+		//	if(RCCSettings.controllerType == RCC_Settings.ControllerType.Keyboard)
+		//		GUI.Label( new Rect(Screen.width - (Screen.width/1.7f),Screen.height - (Screen.height/1.2f),800,100),"Press ''" + RCCSettings.enterExitVehicleKB.ToString() + "'' key to Get In");
+		//}
 		
 	}
 

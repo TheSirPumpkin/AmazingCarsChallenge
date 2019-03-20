@@ -40,27 +40,27 @@ public class RCC_Settings : ScriptableObject {
 	public string horizontalInput = "Horizontal";
     public string verticalInput2 = "Vertical2";
     public string horizontalInput2 = "Horizontal2";
-    public KeyCode handbrakeKB = KeyCode.Space;
-	public KeyCode startEngineKB = KeyCode.I;
+    //public KeyCode handbrakeKB = KeyCode.Space;
+	//public KeyCode startEngineKB = KeyCode.I;
 
-    public KeyCode handbrakeKB2 = KeyCode.RightShift;
-    public KeyCode startEngineKB2 = KeyCode.P;
+    //public KeyCode handbrakeKB2 = KeyCode.RightShift;
+    //public KeyCode startEngineKB2 = KeyCode.P;
 
-    public KeyCode lowBeamHeadlightsKB = KeyCode.L;
-	public KeyCode highBeamHeadlightsKB = KeyCode.K;
-	public KeyCode rightIndicatorKB = KeyCode.E;
-	public KeyCode leftIndicatorKB = KeyCode.Q;
-	public KeyCode hazardIndicatorKB = KeyCode.Z;
-	public KeyCode shiftGearUp = KeyCode.LeftShift;
-	public KeyCode shiftGearDown = KeyCode.LeftControl;
-	public KeyCode NGear = KeyCode.N;
+    //public KeyCode lowBeamHeadlightsKB = KeyCode.L;
+	//public KeyCode highBeamHeadlightsKB = KeyCode.K;
+	//public KeyCode rightIndicatorKB = KeyCode.E;
+	//public KeyCode leftIndicatorKB = KeyCode.Q;
+	//public KeyCode hazardIndicatorKB = KeyCode.Z;
+	//public KeyCode shiftGearUp = KeyCode.LeftShift;
+	//public KeyCode shiftGearDown = KeyCode.LeftControl;
+	//public KeyCode NGear = KeyCode.N;
 
-	public KeyCode boostKB = KeyCode.F;
-    public KeyCode boostKB2 = KeyCode.M;
+	//public KeyCode boostKB = KeyCode.F;
+    //public KeyCode boostKB2 = KeyCode.M;
 
-    public KeyCode slowMotionKB = KeyCode.G;
-	public KeyCode changeCameraKB = KeyCode.C;
-	public KeyCode enterExitVehicleKB = KeyCode.E;
+    //public KeyCode slowMotionKB = KeyCode.G;
+	//public KeyCode changeCameraKB = KeyCode.C;
+	//public KeyCode enterExitVehicleKB = KeyCode.E;
 
 	// Main Controller Settings
 	public bool useAutomaticGear = true;

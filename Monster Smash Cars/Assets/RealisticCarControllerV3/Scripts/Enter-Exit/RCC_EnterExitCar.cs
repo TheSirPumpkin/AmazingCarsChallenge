@@ -71,11 +71,11 @@ public class RCC_EnterExitCar : MonoBehaviour {
 	
 	void Update (){
 
-		if(Input.GetKeyDown(RCCSettings.enterExitVehicleKB) && opened && !temp){
-			GetOut();
-			opened = false;
-			temp = false;
-		}
+		//if(Input.GetKeyDown(RCCSettings.enterExitVehicleKB) && opened && !temp){
+		//	GetOut();
+		//	opened = false;
+		//	temp = false;
+		//}
 
 		if(!isPlayerIn)
 			carController.canControl = false;

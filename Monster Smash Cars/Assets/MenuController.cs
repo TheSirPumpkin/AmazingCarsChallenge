@@ -37,7 +37,7 @@ public class MenuController : MonoBehaviour {
     }
     public void Unlock()
     {
-        Debug.Log(PlayerPrefs.GetInt("Single"));
+        //Debug.Log(PlayerPrefs.GetInt("Single"));
         if (PlayerPrefs.GetInt("Single") == 1)
         {
             foreach (GameObject car in player1Cars)
@@ -118,7 +118,7 @@ Time.timeScale = 1;
                 {
                     if (player1Cars[i].activeSelf == true)
                     {
-                        Debug.Log(i);
+                        //Debug.Log(i);
                         if (i > 0)
                         {
                             player1Cars[i].SetActive(false);
@@ -190,7 +190,7 @@ Time.timeScale = 1;
                 {
                     if (player2Cars[i].activeSelf == true)
                     {
-                        Debug.Log(i);
+                        //Debug.Log(i);
                         if (i > 0)
                         {
                             player2Cars[i].SetActive(false);
@@ -265,8 +265,8 @@ Time.timeScale = 1;
                 {
                     for (int i = colors.Length-1; i > -1; i--)
                     {
-                        Debug.Log(j);
-                        Debug.Log(i);
+                        //Debug.Log(j);
+                        //Debug.Log(i);
                         if (player2Cars[j].GetComponentInChildren<Renderer>().sharedMaterial.color == colors[i])
                         {
                             if (i >0)
@@ -359,8 +359,8 @@ Time.timeScale = 1;
                 {
                     for (int i = colors.Length - 1; i > -1; i--)
                     {
-                        Debug.Log(j);
-                        Debug.Log(i);
+                        //Debug.Log(j);
+                        //Debug.Log(i);
                         if (player1Cars[j].GetComponentInChildren<Renderer>().sharedMaterial.color == colors[i])
                         {
                             if (i > 0)

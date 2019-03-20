@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour {
         //    // maxEngineSoundVolume = 0;
         //}
       
-        Debug.Log("Paused");
+        //Debug.Log("Paused");
        // if (!levelOver)
        // {
             singlePlayer.SetActive(false);
@@ -120,7 +120,7 @@ public class GameController : MonoBehaviour {
             //    source.mute = false;
             //    // maxEngineSoundVolume = 0;
             //}
-            Debug.Log("Resume");
+            //Debug.Log("Resume");
             PauseCanvas.SetActive(false);
             Time.timeScale = 1;
             AudioListener.volume = PlayerPrefs.GetInt("Sound");
@@ -188,6 +188,12 @@ public class GameController : MonoBehaviour {
             else timer2.text = "";
             if (Timer <= 0)
             {
+                sources = GameObject.FindObjectsOfType<AudioSource>();
+                foreach (AudioSource source in sources)
+                {
+                    source.gameObject.SetActive(false);
+                    // maxEngineSoundVolume = 0;
+                }
                 Time.timeScale = 0;
                 if (player1Points > player2Points)
                 {

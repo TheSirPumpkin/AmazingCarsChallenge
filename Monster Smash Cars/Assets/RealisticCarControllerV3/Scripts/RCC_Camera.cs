@@ -194,11 +194,11 @@ public class RCC_Camera : MonoBehaviour{
 		// Lerping current field of view to target field of view.
 		cam.fieldOfView = Mathf.Lerp (cam.fieldOfView, targetFieldOfView, Time.deltaTime * 5f);
 
-		if (Input.GetKey (RCCSettings.slowMotionKB))
-			Time.timeScale = .2f;
+		//if (Input.GetKey (RCCSettings.slowMotionKB))
+		//	Time.timeScale = .2f;
 		
-		if (Input.GetKeyUp (RCCSettings.slowMotionKB))
-			Time.timeScale = orgTimeScale;
+		//if (Input.GetKeyUp (RCCSettings.slowMotionKB))
+		//	Time.timeScale = orgTimeScale;
 			
 	}
 	
@@ -245,9 +245,9 @@ public class RCC_Camera : MonoBehaviour{
 
 		}
 
-		if(Input.GetKeyDown(RCCSettings.changeCameraKB)){
-			ChangeCamera();
-		}
+		//if(Input.GetKeyDown(RCCSettings.changeCameraKB)){
+		//	ChangeCamera();
+		//}
 
 	}
 

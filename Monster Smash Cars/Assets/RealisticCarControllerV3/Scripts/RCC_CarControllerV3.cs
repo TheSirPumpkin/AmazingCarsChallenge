@@ -856,75 +856,75 @@ public class RCC_CarControllerV3 : MonoBehaviour {
                     gasInput = Input.GetAxis(RCCSettings.verticalInput);
                     brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput));
                     steerInput = Input.GetAxis(RCCSettings.horizontalInput);
-                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
-			        boostInput = Input.GetKey(RCCSettings.boostKB) ? 2.5f : 1f;
+                    //handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
+			        //boostInput = Input.GetKey(RCCSettings.boostKB) ? 2.5f : 1f;
                 }
                 if (player == 2)
                 {
                     gasInput = Input.GetAxis(RCCSettings.verticalInput2);
                     brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput2));
                     steerInput = Input.GetAxis(RCCSettings.horizontalInput2);
-                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB2) ? 1f : 0f;
-                    boostInput = Input.GetKey(RCCSettings.boostKB2) ? 2.5f : 1f;
+                    //handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB2) ? 1f : 0f;
+                    //..boostInput = Input.GetKey(RCCSettings.boostKB2) ? 2.5f : 1f;
                 }
-                if (Input.GetKeyDown(RCCSettings.lowBeamHeadlightsKB)){
-				lowBeamHeadLightsOn = !lowBeamHeadLightsOn;
-			}
+   //             if (Input.GetKeyDown(RCCSettings.lowBeamHeadlightsKB)){
+			//	lowBeamHeadLightsOn = !lowBeamHeadLightsOn;
+			//}
 
-			if(Input.GetKeyDown(RCCSettings.highBeamHeadlightsKB)){
-				highBeamHeadLightsOn = true;
-			}else if(Input.GetKeyUp(RCCSettings.highBeamHeadlightsKB)){
-				highBeamHeadLightsOn = false;
-			}
+			//if(Input.GetKeyDown(RCCSettings.highBeamHeadlightsKB)){
+			//	highBeamHeadLightsOn = true;
+			//}else if(Input.GetKeyUp(RCCSettings.highBeamHeadlightsKB)){
+			//	highBeamHeadLightsOn = false;
+			//}
 
-			if(Input.GetKeyDown(RCCSettings.startEngineKB))
-				KillOrStartEngine();
+			//if(Input.GetKeyDown(RCCSettings.startEngineKB))
+			//	KillOrStartEngine();
 
-			if(Input.GetKeyDown(RCCSettings.rightIndicatorKB)){
-				if(indicatorsOn != IndicatorsOn.Right)
-					indicatorsOn = IndicatorsOn.Right;
-				else
-					indicatorsOn = IndicatorsOn.Off;
-			}
+			//if(Input.GetKeyDown(RCCSettings.rightIndicatorKB)){
+			//	if(indicatorsOn != IndicatorsOn.Right)
+			//		indicatorsOn = IndicatorsOn.Right;
+			//	else
+			//		indicatorsOn = IndicatorsOn.Off;
+			//}
 
-			if(Input.GetKeyDown(RCCSettings.leftIndicatorKB)){
-				if(indicatorsOn != IndicatorsOn.Left)
-					indicatorsOn = IndicatorsOn.Left;
-				else
-					indicatorsOn = IndicatorsOn.Off;
-			}
+			//if(Input.GetKeyDown(RCCSettings.leftIndicatorKB)){
+			//	if(indicatorsOn != IndicatorsOn.Left)
+			//		indicatorsOn = IndicatorsOn.Left;
+			//	else
+			//		indicatorsOn = IndicatorsOn.Off;
+			//}
 
-			if(Input.GetKeyDown(RCCSettings.hazardIndicatorKB)){
-				if(indicatorsOn != IndicatorsOn.All){
-					indicatorsOn = IndicatorsOn.Off;
-					indicatorsOn = IndicatorsOn.All;
-				}else{
-					indicatorsOn = IndicatorsOn.Off;
-				}
-			}
+			//if(Input.GetKeyDown(RCCSettings.hazardIndicatorKB)){
+			//	if(indicatorsOn != IndicatorsOn.All){
+			//		indicatorsOn = IndicatorsOn.Off;
+			//		indicatorsOn = IndicatorsOn.All;
+			//	}else{
+			//		indicatorsOn = IndicatorsOn.Off;
+			//	}
+			//}
 
-			if (Input.GetKeyDown (RCCSettings.NGear))
-				NGear = true;
+			//if (Input.GetKeyDown (RCCSettings.NGear))
+			//	NGear = true;
 
-			if (Input.GetKeyUp (RCCSettings.NGear))
-				NGear = false;
+			//if (Input.GetKeyUp (RCCSettings.NGear))
+			//	NGear = false;
 
 			if(!automaticGear){
 
-				if(currentGear < totalGears - 1 && !changingGear){
-					if(Input.GetKeyDown(RCCSettings.shiftGearUp)){
-						if(direction != -1)
-							StartCoroutine("ChangingGear", currentGear + 1);
-						else
-							StartCoroutine("ChangingGear", 0);
-					}
-				}
+				//if(currentGear < totalGears - 1 && !changingGear){
+				//	if(Input.GetKeyDown(RCCSettings.shiftGearUp)){
+				//		if(direction != -1)
+				//			StartCoroutine("ChangingGear", currentGear + 1);
+				//		else
+				//			StartCoroutine("ChangingGear", 0);
+				//	}
+				//}
 
-				if(currentGear >= 0){
-					if(Input.GetKeyDown(RCCSettings.shiftGearDown)){
-						StartCoroutine("ChangingGear", currentGear - 1);	
-					}
-				}
+				//if(currentGear >= 0){
+				//	if(Input.GetKeyDown(RCCSettings.shiftGearDown)){
+				//		StartCoroutine("ChangingGear", currentGear - 1);	
+				//	}
+				//}
 
 			}
 
