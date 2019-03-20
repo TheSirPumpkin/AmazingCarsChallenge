@@ -87,8 +87,17 @@ public class GameController : MonoBehaviour {
         }
         Application.LoadLevel(0);
     }
+    AudioSource[] sources;
     public void Pause()
     {
+        
+        //sources = GameObject.FindObjectsOfType<AudioSource>();
+        //foreach (AudioSource source in sources)
+        //{
+        //    source.pl = true;
+        //    // maxEngineSoundVolume = 0;
+        //}
+      
         Debug.Log("Paused");
        // if (!levelOver)
        // {
@@ -105,6 +114,12 @@ public class GameController : MonoBehaviour {
     {
         if (!levelOver)
         {
+            //sources = GameObject.FindObjectsOfType<AudioSource>();
+            //foreach (AudioSource source in sources)
+            //{
+            //    source.mute = false;
+            //    // maxEngineSoundVolume = 0;
+            //}
             Debug.Log("Resume");
             PauseCanvas.SetActive(false);
             Time.timeScale = 1;
@@ -149,8 +164,13 @@ public class GameController : MonoBehaviour {
             singleScore.text = "" + player1Points;
             if(Timer <= 0&&!levelOver&& PlayerPrefs.GetInt("Free") == 0)
             {
-                
-                    PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
+                sources = GameObject.FindObjectsOfType<AudioSource>();
+                foreach (AudioSource source in sources)
+                {
+                    source.gameObject.SetActive(false);
+                    // maxEngineSoundVolume = 0;
+                }
+                PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
                 Time.timeScale = 0;
                 TimeOver.SetActive(true);
                 levelOver = true;

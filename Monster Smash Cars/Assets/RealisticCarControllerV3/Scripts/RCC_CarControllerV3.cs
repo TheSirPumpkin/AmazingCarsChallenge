@@ -807,10 +807,11 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		}
 
 	}
-	
+   
 	void Update (){
-		
-		if(canControl){
+       
+
+        if (canControl){
 			if(!AIController)
 				Inputs();
 		}else if(!AIController){
