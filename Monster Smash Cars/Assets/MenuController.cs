@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour {
     public GameObject Locked;
-    public Text pointsText;
+    public Text pointsText, carCost;
     public int ptsInt;
     public Color[] colors;
     public GameObject[] player1Cars, player2Cars;
+
+    [ContextMenu("ClearPrefs")]
+    void ClearPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
     public void SetMode(int mode)
     {
@@ -57,7 +63,6 @@ public class MenuController : MonoBehaviour {
         }
     }
 	void Start () {
-      //  PlayerPrefs.DeleteAll();
         ptsInt = PlayerPrefs.GetInt("Points");
         PlayerPrefs.SetInt("CarBought" + player1Cars[0].name,1);
 Time.timeScale = 1;
@@ -417,9 +422,14 @@ Time.timeScale = 1;
                 {
                     if (PlayerPrefs.GetInt("CarBought" + car.name) == 1)
                     {
+
                         Locked.SetActive(false);
                     }
-                    else Locked.SetActive(true);
+                    else
+                    {
+                        carCost.text = "" + car.GetComponent<ColorChanger>().price + " PTS";
+                        Locked.SetActive(true);
+                    }
                 }
             }
         }
