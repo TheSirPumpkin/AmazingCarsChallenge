@@ -45,6 +45,7 @@ public class MenuController : MonoBehaviour {
                 if (car.activeSelf == true&&ptsInt>= car.GetComponent<ColorChanger>().price)
                 {
                     PlayerPrefs.SetInt("CarBought" + car.name, 1);
+                    PlayerPrefs.SetInt("Player1Car", car.GetComponent<ColorChanger>().ID);
                     Locked.SetActive(false);
                     ptsInt -= car.GetComponent<ColorChanger>().price;
                     PlayerPrefs.SetInt("Points", ptsInt);
