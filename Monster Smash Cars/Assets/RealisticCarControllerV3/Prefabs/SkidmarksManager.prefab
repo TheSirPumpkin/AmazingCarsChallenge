@@ -79,12 +79,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb325412de0d9df4e8014c7de65c9795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMarks: 1024
+  maxMarks: 100
   markWidth: 0.35
   groundOffset: 0.02
   minDistance: 0.1

@@ -63,6 +63,14 @@ public class MenuController : MonoBehaviour {
         }
     }
 	void Start () {
+        if (PlayerPrefs.GetInt("FirstStart") != 1)
+        {
+            PlayerPrefs.SetInt("Sound", 1);
+            PlayerPrefs.SetInt("FirstStart", 1);
+            AudioListener.volume = PlayerPrefs.GetInt("Sound");
+        }
+
+        Garter.I.CallAd(1);
         ptsInt = PlayerPrefs.GetInt("Points");
         PlayerPrefs.SetInt("CarBought" + player1Cars[0].name,1);
 Time.timeScale = 1;

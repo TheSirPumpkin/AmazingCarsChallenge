@@ -13,6 +13,10 @@ public class SoundControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(Time.timeScale!=0)
+        AudioListener.volume = PlayerPrefs.GetInt("Sound");
+        if (Time.timeScale == 0)
+            AudioListener.volume =0;
         if (PlayerPrefs.GetInt("Sound") == 0 && SoundOn)
         {
             btn.interactable = true;

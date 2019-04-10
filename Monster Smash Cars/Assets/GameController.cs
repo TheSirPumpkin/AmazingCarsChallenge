@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+  
     public GameObject ResumeButton;
     public GameObject TimeOver;
     bool multi;
@@ -24,6 +25,8 @@ public class GameController : MonoBehaviour {
     public GameObject levelEnd1, levelEnd2;
     public GameObject player1Won, player2Won, DRAW1, DRAW2, player1Lose, player2Lose;
     bool levelOver;
+    [HideInInspector]
+   public AudioSource[] sources;
     void OnEnable()
     {
 
@@ -51,6 +54,7 @@ public class GameController : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        levelOver = false;
         Time.timeScale = 1;
         p1Plus = GameObject.FindGameObjectWithTag("PlayerOnePlus");
         p1Minus= GameObject.FindGameObjectWithTag("PlayerOneMinus");
@@ -76,9 +80,11 @@ public class GameController : MonoBehaviour {
                 if (player.GetComponent<RCC_CameraConfig>().player == 2) p2 = player.GetComponent<RCC_CameraConfig>();
             }
         }
-	}
+        sources = GameObject.FindObjectsOfType<AudioSource>();
+    }
     public void BackToMenu()
     {
+        Garter.I.CallAd(2);
         if (PlayerPrefs.GetInt("Free") ==1&& PlayerPrefs.GetInt("Single") == 1)
         {
             PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points") + player1Points);
@@ -87,21 +93,22 @@ public class GameController : MonoBehaviour {
         }
         Application.LoadLevel(0);
     }
-    AudioSource[] sources;
+  
     public void Pause()
     {
-        
-        //sources = GameObject.FindObjectsOfType<AudioSource>();
-        //foreach (AudioSource source in sources)
-        //{
-        //    source.pl = true;
-        //    // maxEngineSoundVolume = 0;
-        //}
-      
+        Garter.I.CallAd(2);
+      //  sources = GameObject.FindObjectsOfType<AudioSource>();
+        foreach (AudioSource source in sources)
+        {
+            if(source)
+            source.gameObject.SetActive(false);
+            // maxEngineSoundVolume = 0;
+        }
+
         //Debug.Log("Paused");
-       // if (!levelOver)
-       // {
-            singlePlayer.SetActive(false);
+        // if (!levelOver)
+        // {
+        singlePlayer.SetActive(false);
             multiPlayer.SetActive(false);
       //  }
             PauseCanvas.SetActive(true);
@@ -115,11 +122,12 @@ public class GameController : MonoBehaviour {
         if (!levelOver)
         {
             //sources = GameObject.FindObjectsOfType<AudioSource>();
-            //foreach (AudioSource source in sources)
-            //{
-            //    source.mute = false;
-            //    // maxEngineSoundVolume = 0;
-            //}
+            foreach (AudioSource source in sources)
+            {
+                if(source)
+              source.gameObject.SetActive(true);
+               // maxEngineSoundVolume = 0;
+            }
             //Debug.Log("Resume");
             PauseCanvas.SetActive(false);
             Time.timeScale = 1;
@@ -139,7 +147,11 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
+    {if (PauseCanvas.activeSelf == true)
+        {
+            AudioListener.volume = 0;
+               Time.timeScale = 0;
+        }
         if (levelOver) ResumeButton.SetActive(false);
         if (Input.GetKeyDown(KeyCode.P)&&Timer> 0 && !levelOver && PlayerPrefs.GetInt("Free") == 0|| PlayerPrefs.GetInt("Free") == 1&& Input.GetKeyDown(KeyCode.P))
         {
@@ -164,10 +176,12 @@ public class GameController : MonoBehaviour {
             singleScore.text = "" + player1Points;
             if(Timer <= 0&&!levelOver&& PlayerPrefs.GetInt("Free") == 0)
             {
-                sources = GameObject.FindObjectsOfType<AudioSource>();
+                Garter.I.CallAd(2);
+             //   sources = GameObject.FindObjectsOfType<AudioSource>();
                 foreach (AudioSource source in sources)
                 {
-                    source.gameObject.SetActive(false);
+                    if (source)
+                        source.gameObject.SetActive(false);
                     // maxEngineSoundVolume = 0;
                 }
                 PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points")+ player1Points*2);
@@ -186,12 +200,14 @@ public class GameController : MonoBehaviour {
             if (PlayerPrefs.GetInt("Free") == 0)
                 timer2.text = "" + (int)Timer;
             else timer2.text = "";
-            if (Timer <= 0)
+            if (Timer <= 0 && !levelOver)
             {
-                sources = GameObject.FindObjectsOfType<AudioSource>();
+                Garter.I.CallAd(2);
+             //   sources = GameObject.FindObjectsOfType<AudioSource>();
                 foreach (AudioSource source in sources)
                 {
-                    source.gameObject.SetActive(false);
+                    if (source)
+                        source.gameObject.SetActive(false);
                     // maxEngineSoundVolume = 0;
                 }
                 Time.timeScale = 0;
@@ -215,6 +231,8 @@ public class GameController : MonoBehaviour {
 
                 levelEnd1.SetActive(true);
                 levelEnd2.SetActive(true);
+
+                levelOver = true;
             }
           
             if (p1.points < 0) p1.points = 0;

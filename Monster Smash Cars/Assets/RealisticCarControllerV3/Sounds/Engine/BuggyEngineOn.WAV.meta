@@ -1,15 +1,14 @@
 fileFormatVersion: 2
 guid: 140e19e67be2d2141a357b87d13d2f73
-timeCreated: 1436214202
-licenseType: Store
 AudioImporter:
+  externalObjects: {}
   serializedVersion: 6
   defaultSettings:
     loadType: 1
-    sampleRateSetting: 0
+    sampleRateSetting: 1
     sampleRateOverride: 44100
-    compressionFormat: 0
-    quality: 1
+    compressionFormat: 1
+    quality: 0.5
     conversionMode: 0
   platformSettingOverrides:
     4:
@@ -30,6 +29,7 @@ AudioImporter:
   normalize: 0
   preloadAudioData: 1
   loadInBackground: 1
+  ambisonic: 0
   3D: 1
   userData: 
   assetBundleName: 
