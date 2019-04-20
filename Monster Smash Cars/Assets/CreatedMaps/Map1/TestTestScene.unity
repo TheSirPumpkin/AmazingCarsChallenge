@@ -104490,27 +104490,27 @@ Prefab:
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: targetSpeedForGear.Array.data[0]
-      value: 57
+      value: 54.72
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: targetSpeedForGear.Array.data[1]
-      value: 114
+      value: 109.44
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: targetSpeedForGear.Array.data[2]
-      value: 171
+      value: 164.16
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: targetSpeedForGear.Array.data[3]
-      value: 228
+      value: 218.88
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: engineTorque
-      value: 4000
+      value: 5500
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
@@ -104520,12 +104520,12 @@ Prefab:
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: antiRollFrontHorizontal
-      value: 5000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: antiRollRearHorizontal
-      value: 0
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
@@ -104535,17 +104535,17 @@ Prefab:
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: gearShiftingDelay
-      value: 0
+      value: 0.257
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: gearShiftingThreshold
-      value: 0.95
+      value: 0.912
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: clutchInertia
-      value: 0.9
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
@@ -104585,7 +104585,7 @@ Prefab:
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: tractionHelper
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
@@ -104595,12 +104595,12 @@ Prefab:
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: TCSStrength
-      value: 0
+      value: 0.013
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
       propertyPath: tractionHelperStrength
-      value: 0.302
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
         type: 2}
@@ -104621,6 +104621,31 @@ Prefab:
         type: 2}
       propertyPath: turboBoost
       value: 0.000000031598674
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
+        type: 2}
+      propertyPath: highspeedsteerAngle
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
+        type: 2}
+      propertyPath: highspeedsteerAngleAtspeed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
+        type: 2}
+      propertyPath: ABS
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
+        type: 2}
+      propertyPath: steerHelperLinearVelStrength
+      value: 0.29794
+      objectReference: {fileID: 0}
+    - target: {fileID: 114984164650159046, guid: 9ca41321ab2e10243b402fe0cec2e488,
+        type: 2}
+      propertyPath: steerHelperAngularVelStrength
+      value: 0.29794
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca41321ab2e10243b402fe0cec2e488, type: 2}
